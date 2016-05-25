@@ -33,3 +33,20 @@ int main()
     cout<<endl;
     return 0;
 }
+
+
+/*
+                    Theories
+              ====================
+
+Algorithm: Insertion Sort
+
+1. Pick an element and Compare with all elements in the previously sorted sub-list
+2. Shift all the elements in the sorted sub-list that is greater than the value to be sorted
+3. Insert the value
+
+*** Complexity: O(n^2)
+
+*/
+
+
