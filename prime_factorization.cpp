@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <math.h>
-#include <bits/stdc++.h>
 using namespace std;
 
 #define ALGORITHM 1
