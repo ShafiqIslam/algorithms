@@ -25,6 +25,15 @@ unsigned long long upower(unsigned a, unsigned b) {
     return power;
 }
 
+unsigned modular_exponent(unsigned a, unsigned b, unsigned m)
+{
+    unsigned c=1;
+    for(unsigned i=1; i<=b; i++) {
+        c = (a*c) % m;
+    }
+    return c;
+}
+
 bool is_prime(unsigned n)
 {
     unsigned r;
@@ -36,6 +45,7 @@ bool is_prime(unsigned n)
         srand (time(NULL) + i);
         r = (rand() % (n-2)) + 2;
 
+        /*
         unsigned long long exp = upower(r, n - 1);
         if(!exp) {
             continue;
@@ -43,6 +53,13 @@ bool is_prime(unsigned n)
         if( (exp % n) != 1) {
             return false;
         }
+        */
+
+        // not calculating exponent then modulus
+        // instead of use Modular Exponentiation Algorithm
+        if( modular_exponent(r, n-1, n) != 1 )
+            return false;
+
 
         probability_of_not = probability_of_not * 0.5;
         probability = 1 - probability_of_not;
@@ -122,5 +139,20 @@ otherwise test again to gain minimum confidence or, until a max test iteration.
 Complexity: Using fast algorithms for modular exponentiation, the running time of this algorithm is
 O(k * (log n)^2 * log(log n) * log( log( log n) ) ), where k is the number of iteration,
 and n is the value we want to test for primality.
+
+
+Modular Exponentiation:
+-----------------------
+*** ( (a mod p) (b mod p) ) mod p  =  (ab) mod p
+
+The algorithm is as follows:
+1. Set c = 1, e' = 0.
+2. Increase e' by 1.
+3. Set c = (b * c) mod m.
+4. If e' < e, goto step 2. Else, c contains the correct solution to c be mod m.
+Note that in every pass through step 3, the equation c = b^e' mod m holds true.
+When step 3 has been executed e times, then, c contains the answer that was sought.
+In summary, this algorithm basically counts up e' by ones until e' reaches e,
+doing a multiply by b and the modulo operation each time it adds one (to ensure the results stay small).
 
 */
