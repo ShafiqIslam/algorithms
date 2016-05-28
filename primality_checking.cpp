@@ -111,11 +111,11 @@ Algorithm: Primality checking with Fermat Little Theorem
 
 Fermat Little Theorem:
 ----------------------
-If p is prime then for any n (2 <= n < p), then n^(p-1) == 1 mod p, or, n^(p-1) mod p = 1
+If p is prime then for any n (2 <= n < p), then n^(p-1) === 1 (mod p), means, n^(p-1) mod p = 1
 
 Example:
 p = 17, n = 2
-n^(p-1) = 2^16 = 65536 == 1 mod 17 ( 65536 = 17 * 3855 + 1 )
+n^(p-1) = 2^16 = 65536 === 1 (mod 17) ( 65536 = 17 * 3855 + 1 )
 
 So, to see if p is prime:
 1. Pick a random number between 2 and p-1
@@ -124,7 +124,7 @@ So, to see if p is prime:
 
 
 Now, sadly this theorem does not always give correct result.
-n^(p-1) == 1 mod p is possible, though p is not prime.
+n^(p-1) === 1 (mod p) is possible, though p is not prime.
 
 So, a probabilistic approach is used.
 
