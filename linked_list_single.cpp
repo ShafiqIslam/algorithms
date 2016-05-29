@@ -76,12 +76,49 @@ void delete_position(int position)
     return;
 }
 
+void insert_in_sorted_list(int value)
+{
+    int position = 0;
+
+    Node *next = start;
+
+    while ( next != nullptr && value >= next->data) {
+        next = next->next;
+        position++;
+        if(next == nullptr || value < next->data) break;
+    }
+
+    insert_after(position, value);
+    return;
+}
+
+void sort_list()
+{
+    Node *current = start;
+
+    while ( current != nullptr ) {
+        Node *next = current->next;
+        while(next != nullptr) {
+            if(current->data > next->data) {
+                int temp = current->data;
+                current->data = next->data;
+                next->data = temp;
+            }
+            next = next->next;
+        }
+        current = current->next;
+    }
+
+    print();
+    return;
+}
+
 void initialize()
 {
     Node *node;
     start = node = new Node;
     for(int i=1; i<=INITIAL_SIZE; i++) {
-        node->data = i*i;
+        node->data = (i-6)*(i-6);
         if(i==INITIAL_SIZE) {
             node->next = nullptr;
         } else {
@@ -97,8 +134,17 @@ int main()
 {
     print();
     initialize();
+
     insert_after(5, 36);
     delete_position(6);
+
+    sort_list();
+    insert_in_sorted_list(40);
+    insert_in_sorted_list(12);
+    insert_in_sorted_list(0);
+
+    delete_position(1);
+
     cout<<endl;
     return 0;
 }
