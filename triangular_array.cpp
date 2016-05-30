@@ -117,6 +117,9 @@ int main()
             Theories
         ================
 
+Data Structure: Triangular Array
+
+
 Suppose, some distance matrix like:
 {   0, 123, 256, 809 }
 { 123,   0, 754, 390 }
