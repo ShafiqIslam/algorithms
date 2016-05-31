@@ -85,6 +85,8 @@ public:
 
                     next_column = next_column->next_column;
                 }
+
+                return default_value;
             }
 
             next_row = next_row->next_row;
