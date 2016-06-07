@@ -3,15 +3,15 @@ using namespace std;
 
 int moves(0);
 
-void Hanoi(int n, string source, string target, string temp)
+void move(int n, string source, string target, string temp)
 {
     moves++;
     if(n == 1){
         cout << "Move disc " << n << " from " << source << " to " << target << endl;
     } else{
-        Hanoi(n-1, source, temp, target);
+        move(n-1, source, temp, target);
         cout << "Move disc " << n << " from " << source << " to " << target << endl;
-        Hanoi(n-1, temp, target, source);
+        move(n-1, temp, target, source);
     }
 }
 
@@ -19,7 +19,7 @@ int main()
 {
 
     int no_of_discs = 3;
-    Hanoi(no_of_discs, "Source", "Target", "Temp");
+    move(no_of_discs, "Source", "Target", "Temp");
     cout << endl << "It took " << moves << " moves. " << endl;
 
     cout<<endl;
