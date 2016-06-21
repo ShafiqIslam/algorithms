@@ -161,6 +161,24 @@ int main()
     else
         cout<<"No solution exists. Sorry :("<<endl;
 
+
     cout<<endl;
     return 0;
 }
+
+
+/*
+            Theories
+        ===============
+
+Algorithm: Basic Backtracking
+
+Problem: Solve Sudoku.
+
+1. Check for unassigned cell. Start with the first one.
+2. Try placing every digit.
+3. If it is safe then, move on and solve the remaining cells recursively.
+4. If all cells are solved correctly, then return true.
+5. If not, then remove current assignment and check further.
+
+*/
