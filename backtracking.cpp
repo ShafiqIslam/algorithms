@@ -6,9 +6,10 @@ using namespace std;
 int solution[N][N];
 int letter_counter = 1;
 
-bool search(char matrix[N][N], string word, int row, int col, int index) {
+bool search(char matrix[N][N], string word, int row, int col, int index)
+{
 
-    // check if current cell not already used or character in it is not not
+    // check if current cell not already used or character in it is not
     if (solution[row][col] != 0 || word[index] != matrix[row][col]) {
         return false;
     }
