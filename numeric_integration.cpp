@@ -72,13 +72,13 @@ int main()
 
 Integration can be calculated numerically by dividing the curve in smaller area and adding up the areas.
 
-Two methods is use:
+Two methods in use:
 Rectangular Rule:
 -----------------
 Divide in rectangles(same width, multiple width range can be used, which gives better result, but coding that is bit tough).
 Starting from min x up to max x, for every x, calculate y(height), and multiply with dx (width).
 Add the areas.
-Now, as multiplication of dx is happening every time, it can be take out.
+Now, as multiplication of dx is happening every time, it can be taken out.
 
 Trapezoid Rule:
 ---------------
