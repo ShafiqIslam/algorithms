@@ -38,6 +38,7 @@ public:
 
     int getValue(int row, int column)
     {
+        if(row == column) return 0;
         int index = mapRowAndColumn (row, column);
         return storage_array[index];
     }
