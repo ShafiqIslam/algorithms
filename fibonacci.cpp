@@ -53,7 +53,7 @@ int main()
 
     cout<<endl<<endl<<endl;
 
-    n = 80;
+    n = 4;
     fibo_init(n);
     cout<<"Fixed Recursive Method"<<endl;
     cout<<"----------------------"<<endl;
